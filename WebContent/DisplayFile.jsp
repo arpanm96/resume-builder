@@ -5,11 +5,12 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Insert title here</title>
+<title>Details</title>
 </head>
 <body>
 <center>
 
+<form action="SubmitData.jsp" method="post">
 <table border="1" align="center">
 <th>Fields</th><th>Data</th>
 <%
@@ -24,6 +25,12 @@
    }
 %>
 </table>
+<input type="submit" value="Proceed"/>
+</form>
+
+<form action="FormFile.jsp" method="post">
+<input type="submit" value="Edit">
+</form>
 </center>
 </body>
 </html>

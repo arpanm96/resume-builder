@@ -1,8 +1,8 @@
 <%@page import="org.apache.jasper.tagplugins.jstl.core.Param"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
-    <%@ page import="bean.*" %>
-    <jsp:useBean id="obj" class="bean.CheckFields" scope="session"/>
+    <%@ page import="bean.CheckFields" %>
+    
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -12,6 +12,7 @@
 <body>
 <% 
 
+CheckFields obj = new CheckFields();
 String firstName = "";
 
 if(request.getParameter("firstNameParam") != null)
@@ -50,9 +51,9 @@ String percentage2 = request.getParameter("percentageParam2");
 String percentage3 = request.getParameter("percentageParam3");
 String percentage4 = request.getParameter("percentageParam4");
 
-String address = request.getParameter("addrParam");
+/* String address = request.getParameter("addrParam");
 String state = request.getParameter("stateParam");
-String college = request.getParameter("collegeParam");
+String college = request.getParameter("collegeParam"); */
 
 String dob = request.getParameter("dobParam");
 String email = request.getParameter("emailParam");
@@ -207,7 +208,8 @@ if(!flag)
 }
 else
 {
-	 fileToBeForwarded="DisplayFile.jsp";
+	 //fileToBeForwarded="DisplayFile.jsp";
+	 fileToBeForwarded="SubmitData.jsp";
 }
 %>
 
@@ -238,9 +240,6 @@ else
 <jsp:param  name="percentageParam3" value="<%=percentage3 %>"/>
 <jsp:param  name="percentageParam4" value="<%=percentage4 %>"/>
 
-<jsp:param  name="addrParam" value="<%=address %>"/>
-<jsp:param  name="stateParam" value="<%=state %>"/>
-<jsp:param  name="collegeParam" value="<%=college %>"/>
 
 <jsp:param  name="DobParam" value="<%=dob %>"/>
 <jsp:param  name="emailParam" value="<%=email %>"/>
