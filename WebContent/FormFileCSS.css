@@ -1,0 +1,40 @@
+@CHARSET "ISO-8859-1";
+
+body {
+	background-color: #ebf2c1;
+	
+}
+
+h2 {
+
+}
+#Intro {
+	text-align : center;
+	color : #5033c4;
+	font-family: sans-serif;
+	font-size: xx-large;
+	
+}
+
+
+#BasicInformation {
+	
+}
+
+#Contact {
+	
+}
+
+#Education {
+	
+}
+
+#Experience {
+	
+}
+
+#Submit {
+	width:300px;
+	height:200px;
+	text-align : center;
+}
