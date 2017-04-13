@@ -2,6 +2,8 @@ package bean;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.Statement;
 
 public class ResumeDataInsert {
 
@@ -35,6 +37,7 @@ public class ResumeDataInsert {
 	        ps.setString(9,);*/
 	        
 	        ps.execute();
+	        con.close();
 		  
 	   }
 	   catch(Exception e)
@@ -43,5 +46,27 @@ public class ResumeDataInsert {
 	   }
 		
 		System.out.println("Inserted successfully");
+		
+	}
+	public static ResultSet retrieve(String mailID)
+	{
+
+		//OracleThinConnection object1 = new OracleThinConnection();
+		Statement stm = null;
+		ResultSet rs = null;
+		Connection con = OracleThinConnection.getRequestConnection();
+		try
+		{
+	      stm = con.createStatement();
+
+	      String sql = "select * from resume_test where email = '" + mailID + "'";
+	      rs = stm.executeQuery(sql);	      
+	      //rs.close();
+	    }
+		catch(Exception e)
+		{
+			e.printStackTrace();
+		}
+		return rs;
 	}
 }

@@ -22,6 +22,9 @@ ResumeDataInsert.insert(obj);
 out.println("Inserted into Database");
 %>
 
+<br><br>
+<center>
 <jsp:include page="Initial.html"/>
+</center>
 </body>
 </html>

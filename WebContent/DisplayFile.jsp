@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
-    <%@page import="java.io.*,java.util.*" %>
+    <%@page import="java.io.*,java.util.*,java.sql.*,bean.ResumeDataInsert" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -10,27 +10,52 @@
 <body>
 <center>
 
-<form action="SubmitData.jsp" method="post">
+<form action="Initial.html" method="post">
 <table border="1" align="center">
-<th>Fields</th><th>Data</th>
+            <tr>
+               <th>First Name</th>
+               <th>Last Name</th>
+               <th>Email</th>
+               <th>Address</th>
+               <th>Phone No</th>
+           </tr>
 <%
-   Enumeration paramNames = request.getParameterNames();
 
-   while(paramNames.hasMoreElements())
-   {
-      String paramName = (String)paramNames.nextElement();
-      out.print("<tr><td>" + paramName + "</td>\n");
-      String paramValue = request.getParameter(paramName);
-      out.println("<td> " + paramValue + "</td></tr>\n");
-   }
+String mailID = request.getParameter("search");
+ResultSet rs = ResumeDataInsert.retrieve(mailID); 
+
+boolean flag = true;
+
+if(!rs.next()) {
+    out.println("Email address not found in database! Try Again! ");
+    flag = false;
+} 
+else
+{
+	do
+	{
+		System.out.println("Retrieved successfully");
+
+   
+%>
+<tr>
+               <td> <%= rs.getString(1) %> </td>
+               <td> <%= rs.getString(2) %> </td>
+               <td> <%= rs.getString(3) %> </td>
+               <td> <%= rs.getString(4) %> </td>
+               <td> <%= rs.getString(5) %> </td>
+</tr>
+<br>
+<% 
+				
+	}while(rs.next()); 
+}
+rs.close();
 %>
 </table>
-<input type="submit" value="Proceed"/>
+<input type="submit" value="Back"/>
 </form>
 
-<form action="FormFile.jsp" method="post">
-<input type="submit" value="Edit">
-</form>
 </center>
 </body>
 </html>
