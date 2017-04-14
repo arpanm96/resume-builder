@@ -41,9 +41,9 @@ else
 <tr>
                <td> <%= rs.getString(1) %> </td>
                <td> <%= rs.getString(2) %> </td>
-               <td> <%= rs.getString(3) %> </td>
-               <td> <%= rs.getString(4) %> </td>
-               <td> <%= rs.getString(5) %> </td>
+               <td> <%= rs.getString("email") %> </td>
+               <td> <%= rs.getString("address") %> </td>
+               <td> <%= rs.getString("mobile") %> </td>
 </tr>
 <br>
 <% 

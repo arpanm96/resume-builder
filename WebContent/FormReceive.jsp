@@ -29,6 +29,8 @@ if(request.getParameter("firstNameParam") != null)
 String lastName = request.getParameter("lastNameParam");
 String fatherName = request.getParameter("fathersNameParam");
 String PhoneNo = request.getParameter("mobileNoParam");
+String gender=request.getParameter("genderParam");
+System.out.println(gender);
 
 //Education
 String exam1 = request.getParameter("examParam1");
@@ -66,6 +68,10 @@ String project2 = request.getParameter("projectNameParam2");
 String desc2 = request.getParameter("description2");
 String project3 = request.getParameter("projectNameParam3");
 String desc3 = request.getParameter("description3");
+
+String eca = request.getParameter("ecaParam");
+String hobbies[]=request.getParameterValues("hobbiesParam");
+
 
 
 boolean flag = true;
@@ -201,6 +207,11 @@ if(exam4 != "" && !obj.checkString(exam4))
 	exam4 = "";
 }
 
+if(eca == "")
+{
+	flag = false;
+}
+
 String fileToBeForwarded="";
 if(!flag)
 {
@@ -211,14 +222,19 @@ else
 	 //fileToBeForwarded="DisplayFile.jsp";
 	 fileToBeForwarded="SubmitData.jsp";
 }
+
+
 %>
 
 <jsp:forward page="<%=fileToBeForwarded %>">
+
 <jsp:param  name="firstNameParam" value="<%=firstName %>"/>
 <jsp:param  name="lastNameParam" value="<%=lastName %>"/>
 <jsp:param  name="fathersNameParam" value="<%=fatherName %>"/>
 <jsp:param  name="mobileNoParam" value="<%=PhoneNo %>"/>
 <jsp:param  name="dobParam" value="<%=dob %>"/>
+<jsp:param  name="genderParam" value="<%=gender %>"/>
+
 
 <jsp:param  name="examParam1" value="<%=exam1 %>"/>
 <jsp:param  name="examParam2" value="<%=exam2 %>"/>
@@ -252,6 +268,9 @@ else
 <jsp:param  name="description2" value="<%=desc2 %>"/>
 <jsp:param  name="projectNameParam3" value="<%=project3 %>"/>
 <jsp:param  name="description3" value="<%=desc3 %>"/>
+
+<jsp:param  name="ecaParam" value="<%=eca %>"/>
+
 
 
 </jsp:forward>

@@ -36,6 +36,41 @@
 	<td><input type="date" name="dobParam" value="${param.dobParam}" ></td>
 </tr>
 
+<tr>
+   <th>Gender</th>
+<td>
+<%
+	String s  = "";
+    if(request.getParameter("genderParam") != null)
+    	s = request.getParameter("genderParam");
+
+	if(s == "" || s.equalsIgnoreCase("male")) 
+	{ 
+%>
+    	<input type="radio" name="genderParam" value="male" checked/>Male 
+    	<input type="radio" name="genderParam" value="female"/>Female
+    	 <input type="radio" name="genderParam" value="other"/>Other
+<%  } 
+	else if(request.getParameter("genderParam").equalsIgnoreCase("female")) 
+	{
+%>
+	    <input type="radio" name="genderParam" value="male" />Male 
+    	<input type="radio" name="genderParam" value="female" checked/>Female 
+    	<input type="radio" name="genderParam" value="other"/>Other
+<% 
+	}
+	else
+	{
+%>
+	    <input type="radio" name="genderParam" value="male" />Male 
+    	<input type="radio" name="genderParam" value="female"/>Female 
+    	<input type="radio" name="genderParam" value="other" checked/>Other
+<%
+	}
+%>
+</td>
+</tr>
+
 </table>
 </div>
 <h2>CONTACT INFORMATION</h2>
@@ -127,6 +162,74 @@
 	<th>Description </th>
 	<td><textarea placeholder="Enter project description here... " rows="3" cols="30" name="description3" value="${param.description3}" ></textarea></td>
 </tr>
+</table>
+</div>
+
+</div>
+<h2>Activites</h2>
+<div id="ECA">
+<table border="1" cellspacing="20" cellpadding="5">
+<tr>
+	<th>Extra Curricular Activites :   </th>
+	<td><input type="number" name="ecaParam" value="${param.ecaParam}" /></td>
+</tr>
+<tr>
+	<th>Hobbies :  </th>
+	<td>
+<%
+	String h1  = "";
+    if(request.getParameter("hobbiesParam1") != null)
+    	h1 = request.getParameter("hobbiesParam1");
+	//System.out.println(h1);
+	String h2  = "";
+    if(request.getParameter("hobbiesParam2") != null)
+    	h2 = request.getParameter("hobbiesParam2");
+	//System.out.println(h2);
+	String h3  = "";
+    if(request.getParameter("hobbiesParam3") != null)
+    	h3 = request.getParameter("hobbiesParam3");
+	//System.out.println(h3);
+	
+	if(h1 == "" )//|| 
+	{ 
+%>
+    	<input type="checkbox" name="hobbiesParam1" value="sports" />Sports
+<% 
+	}
+	if(h2 == "")
+	{
+%>
+    	<input type="checkbox" name="hobbiesParam2" value="gaming" />Gaming
+<% }
+	if(h3 == "")
+	{
+%>
+
+    	<input type="checkbox" name="hobbiesParam3" value="reading"/>Reading
+<%  } 
+
+	if( h1.equalsIgnoreCase("sports"))
+{
+%>
+		<input type="checkbox" name="hobbiesParam1" value="sports" checked/>Sports
+<%
+}
+	if(h2.equalsIgnoreCase("gaming")) 
+	{
+%>
+	    <input type="checkbox" name="hobbiesParam2" value="gaming" checked/>Gaming
+<% 
+	}
+	if(h3.equalsIgnoreCase("reading"))
+	{
+%>
+		<input type="checkbox" name="hobbiesParam3" value="reading" checked/>Reading
+<%
+	}
+%>
+</td>
+</tr>
+
 </table>
 </div>
 

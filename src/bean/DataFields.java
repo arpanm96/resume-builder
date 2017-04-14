@@ -1,20 +1,25 @@
 package bean;
 
+import java.sql.Date;
+
 public class DataFields {
 
 	String firstNameParam,lastNameParam,fathersNameParam,description;
 	String dobParam;
 	String emailParam,githubParam,LinkedInParam;
 	long mobileNoParam;
+	String genderParam;
 	
 	String examParam1,examParam2,examParam3,examParam4;
-	long dateParam1,dateParam2,dateParam3,dateParam4;
+	int dateParam1,dateParam2,dateParam3,dateParam4;
 	int marksParam1,marksParam2,marksParam3,marksParam4;
 	int percentageParam1,percentageParam2,percentageParam3,percentageParam4;
 	
 
 	String projectNameParam1,projectNameParam2,projectNameParam3;
 	String description1,description2,description3;
+	
+	String ecaParam,hobbiesParam1,hobbiesParam2,hobbiesParam3;
 	
 	public String getFirstNameParam() {
 		return firstNameParam;
@@ -94,30 +99,22 @@ public class DataFields {
 	public void setExamParam4(String examParam4) {
 		this.examParam4 = examParam4;
 	}
-	public long getDateParam1() {
+	public int getDateParam1() {
 		return dateParam1;
 	}
-	public void setDateParam1(long dateParam1) {
-		this.dateParam1 = dateParam1;
-	}
-	public long getDateParam2() {
+
+	public int getDateParam2() {
 		return dateParam2;
 	}
-	public void setDateParam2(long dateParam2) {
-		this.dateParam2 = dateParam2;
-	}
-	public long getDateParam3() {
+
+	public int getDateParam3() {
 		return dateParam3;
 	}
-	public void setDateParam3(long dateParam3) {
-		this.dateParam3 = dateParam3;
-	}
-	public long getDateParam4() {
+
+	public int getDateParam4() {
 		return dateParam4;
 	}
-	public void setDateParam4(long dateParam4) {
-		this.dateParam4 = dateParam4;
-	}
+
 	public int getMarksParam1() {
 		return marksParam1;
 	}
@@ -201,5 +198,47 @@ public class DataFields {
 	}
 	public void setDescription3(String description3) {
 		this.description3 = description3;
+	}
+	public void setDateParam1(int dateParam1) {
+		this.dateParam1 = dateParam1;
+	}
+	public void setDateParam2(int dateParam2) {
+		this.dateParam2 = dateParam2;
+	}
+	public void setDateParam3(int dateParam3) {
+		this.dateParam3 = dateParam3;
+	}
+	public String getGenderParam() {
+		return genderParam;
+	}
+	public void setGenderParam(String genderParam) {
+		this.genderParam = genderParam;
+	}
+	public String getEcaParam() {
+		return ecaParam;
+	}
+	public void setEcaParam(String ecaParam) {
+		this.ecaParam = ecaParam;
+	}
+	public String getHobbiesParam1() {
+		return hobbiesParam1;
+	}
+	public void setHobbiesParam1(String hobbiesParam1) {
+		this.hobbiesParam1 = hobbiesParam1;
+	}
+	public String getHobbiesParam2() {
+		return hobbiesParam2;
+	}
+	public void setHobbiesParam2(String hobbiesParam2) {
+		this.hobbiesParam2 = hobbiesParam2;
+	}
+	public String getHobbiesParam3() {
+		return hobbiesParam3;
+	}
+	public void setHobbiesParam3(String hobbiesParam3) {
+		this.hobbiesParam3 = hobbiesParam3;
+	}
+	public void setDateParam4(int dateParam4) {
+		this.dateParam4 = dateParam4;
 	}
 }
