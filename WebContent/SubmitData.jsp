@@ -24,7 +24,7 @@ out.println("Inserted into Database");
 
 <br><br>
 <center>
-<jsp:include page="Initial.html"/>
+<jsp:include page="Initial.jsp"/>
 </center>
 </body>
 </html>

@@ -78,7 +78,7 @@
 <table border="1" cellspacing="20" cellpadding="5">
 <tr>
 	<th>Email : 		</th>
-	<td><input type="email" name="emailParam" value="${param.emailParam}" ></td>
+	<td><input type="email" name="emailParam" value="<%=session.getAttribute("mailID") %>" readonly></td>
 
 </tr>
 <tr>

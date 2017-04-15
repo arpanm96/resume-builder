@@ -10,7 +10,7 @@
 <body>
 <center>
 
-<form action="Initial.html" method="post">
+<form action="Initial.jsp" method="post">
 <table border="1" align="center">
             <tr>
                <th>First Name</th>
@@ -22,7 +22,11 @@
 <%
 
 String mailID = request.getParameter("search");
-ResultSet rs = ResumeDataInsert.retrieve(mailID); 
+//ResultSet rs = ResumeDataInsert.retrieve(mailID);
+
+
+String s = (String)session.getAttribute("mailID");
+ResultSet rs = ResumeDataInsert.retrieve(s);
 
 boolean flag = true;
 
