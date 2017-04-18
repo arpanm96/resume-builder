@@ -31,7 +31,7 @@ ResultSet rs = ResumeDataInsert.retrieve(s);
 boolean flag = true;
 
 if(!rs.next()) {
-    out.println("Email address not found in database! Try Again! ");
+    out.println("Resume data for this email address not found in database! Try Again! ");
     flag = false;
 } 
 else
